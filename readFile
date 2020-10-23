@@ -1,20 +1,20 @@
 
 def read_File_LabelList(filepath):
-    labelList=[]
+    labelList=[]        # this stores the first word- ham spam.
     f=open(filepath, "r")
     
     for line in f:
-        labelList.append(line.split(' ', 1)[0])  #put ham and spam into labelList
-    toNum(labelList)       #turn label into 0 or 1.
+        labelList.append(line.split(None, 1)[0])  #put ham and spam into labelList
+    toNum(labelList)       #turn label- ham and spam into 0 or 1.
     print(labelList)
     f.close()
 
 def read_File_SampleList(filepath):
-    sampleList=[]
+    sampleList=[]       # this list stores the rest or the text except the first word in each line.
     f=open(filepath, "r")
     for lines in f:
         lines=lines.rstrip("\n")
-        sampleList.append(lines.split(' ', 1)[1]) #put rest of the sample into sampleList
+        sampleList.append(lines.split(None, 1)[1]) #put rest of the sample into sampleList
     print(sampleList)
     f.close()
 
